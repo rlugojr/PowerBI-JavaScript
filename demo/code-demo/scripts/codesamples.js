@@ -79,6 +79,26 @@ function _Embed_EmbedWithDefaultFilter() {
 
 // ---- Report Operations ----------------------------------------------------
 
+function _Report_OpenEditMode() {
+    var iframe = $("iframe")[0];
+    iframe.contentWindow.postMessage({"method":"POST","url":"/report/switchMode/edit","headers":{},"body":{}}, "*");
+}
+
+function _Report_OpenViewMode() {
+    var iframe = $("iframe")[0];
+    iframe.contentWindow.postMessage({"method":"POST","url":"/report/switchMode/view","headers":{},"body":{}}, "*");
+}
+
+function _Report_Save() {
+    var iframe = $("iframe")[0];
+    iframe.contentWindow.postMessage({"method":"POST","url":"/report/save","headers":{},"body":{}}, "*");
+}
+
+function _Report_SaveAs() {
+    var iframe = $("iframe")[0];
+    iframe.contentWindow.postMessage({"method":"POST","url":"/report/saveAs","headers":{},"body":{"name":"report1"}}, "*");
+}
+
 function _Report_GetId() {
     // Get a reference to the embedded report.
     report = powerbi.embeds[0];

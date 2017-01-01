@@ -1,4 +1,20 @@
 // ---- Report Operations ----------------------------------------------------
+function Report_OpenEditMode() {
+    SetCode(_Report_OpenEditMode);
+}
+
+function Report_OpenViewMode() {
+    SetCode(_Report_OpenViewMode);
+}
+
+function Report_Save() {
+    SetCode(_Report_Save);
+}
+
+function Report_SaveAs() {
+    SetCode(_Report_SaveAs);
+}
+
 function Report_GetId() {
     SetCode(_Report_GetId);
 }

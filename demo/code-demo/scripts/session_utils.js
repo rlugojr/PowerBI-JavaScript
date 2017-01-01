@@ -20,12 +20,13 @@ function GetParameterByName(name, url) {
 
 function SetSession(key, value) {
     // This is a temporal solution for session (which is cleared on reload). Should be replaced with a real session.
-    _session[key] = value;
+    //_session[key] = value;
+    sessionStorage.setItem(key, value);
 }
 
 function GetSession(key) {
     // This is a temporal solution for session (which is cleared on reload). Should be replaced with a real session.
-    return _session[key];
+    return sessionStorage.getItem(key);
 }
 
 function UpdateSession(button, sessionKey) {
