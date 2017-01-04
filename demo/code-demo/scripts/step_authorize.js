@@ -8,7 +8,8 @@ function OpenEmbedStepWithSampleValues(accessToken, embedUrl, reportId)
 }
 
 function OpenEmbedStepWithSample() {
-    var staticReportUrl = 'https://powerbiembedapi.azurewebsites.net/api/reports/c52af8ab-0468-4165-92af-dc39858d66ad';
+    var staticReportUrl = 'https://powerbiembedapi.azurewebsites.net/api/reports?id=c52af8ab-0468-4165-92af-dc39858d66ad&env=Prod';
+
     fetch(staticReportUrl).then(function (response) {
         if (response.ok) {
             return response.json().then(function (embedConfig) {

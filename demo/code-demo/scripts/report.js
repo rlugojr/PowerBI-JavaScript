@@ -5,28 +5,34 @@ function OpenAuthStep() {
     $("#steps-auth a").addClass(active_class);
     $('#steps-embed a').removeClass(active_class);
     $('#steps-interact a').removeClass(active_class);
+    $('#steps-devtools a').removeClass(active_class);
 
     $("#steps-auth .step-div").addClass(active_div);
     $('#steps-embed .step-div').removeClass(active_div);
     $('#steps-interact .step-div').removeClass(active_div);
+    $('#steps-devtools .step-div').removeClass(active_div);
 
     // Hide Embed view in authorization step.
     $("#authorize-step-wrapper").show();
     $("#embed-and-interact-steps-wrapper").hide();
+    $("#devtools-step-wrapper").hide();
 }
 
 function OpenEmbedStep() {
     $("#steps-auth a").removeClass(active_class);
     $('#steps-embed a').addClass(active_class);
     $('#steps-interact a').removeClass(active_class);
+    $('#steps-devtools a').removeClass(active_class);
 
     $("#steps-auth .step-div").removeClass(active_div);
     $('#steps-embed .step-div').addClass(active_div);
     $('#steps-interact .step-div').removeClass(active_div);
+    $('#steps-devtools .step-div').removeClass(active_div);
 
     // Hide Embed view in authorization step.
     $("#authorize-step-wrapper").hide();
     $("#embed-and-interact-steps-wrapper").show();
+    $("#devtools-step-wrapper").hide();
 
     $("#settings").load("settings_embed.html", function() {
         SetTextBoxesFromSessionOrUrlParam("#txtAccessToken", "#txtReportEmbed", "#txtEmbedReportId");
@@ -38,14 +44,17 @@ function OpenInteractStep() {
     $("#steps-auth a").removeClass(active_class);
     $('#steps-embed a').removeClass(active_class);
     $('#steps-interact a').addClass(active_class);
+    $('#steps-devtools a').removeClass(active_class);
 
     $("#steps-auth .step-div").removeClass(active_div);
     $('#steps-embed .step-div').removeClass(active_div);
     $('#steps-interact .step-div').addClass(active_div);
+    $('#steps-devtools .step-div').removeClass(active_div);
 
     // Hide Embed view in authorization step.
     $("#authorize-step-wrapper").hide();
     $("#embed-and-interact-steps-wrapper").show();
+    $("#devtools-step-wrapper").hide();
 
     $("#settings").load("settings_interact.html", function() {
         SetToggleHandler("report-operations-div");
@@ -53,4 +62,23 @@ function OpenInteractStep() {
         SetToggleHandler("events-operations-div");
         LoadCodeArea("#embedCodeDiv", _Report_GetId);
     });
+}
+
+function OpenDevtoolsStep() {
+    $("#steps-auth a").removeClass(active_class);
+    $('#steps-embed a').removeClass(active_class);
+    $('#steps-interact a').removeClass(active_class);
+    $('#steps-devtools a').addClass(active_class);
+
+    $("#steps-auth .step-div").removeClass(active_div);
+    $('#steps-embed .step-div').removeClass(active_div);
+    $('#steps-interact .step-div').removeClass(active_div);
+    $('#steps-devtools .step-div').addClass(active_div);
+
+    // Hide Embed view in authorization step.
+    $("#authorize-step-wrapper").hide();
+    $("#embed-and-interact-steps-wrapper").hide();
+    $("#devtools-step-wrapper").show();
+
+    $("#devtools-step-wrapper").load("step_devtools.html");
 }
