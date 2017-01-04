@@ -39,10 +39,15 @@ function _Embed_BasicEmbed() {
 
     // Report.off removes a given event handler if it exists.
     report.off("loaded");
+	report.off("rendered");
 
     // Report.on will add an event handler which prints to Log window.
     report.on("loaded", function() {
         Log.logText("Loaded");
+    });
+	
+    report.on("rendered", function() {
+        Log.logText("Rendered");
     });
 }
 
