@@ -12,6 +12,7 @@ function OpenAuthStep() {
     $('#steps-interact .step-div').removeClass(active_div);
     $('#steps-devtools .step-div').removeClass(active_div);
 
+
     // Hide Embed view in authorization step.
     $("#authorize-step-wrapper").show();
     $("#embed-and-interact-steps-wrapper").hide();
