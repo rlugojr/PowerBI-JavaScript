@@ -1,3 +1,4 @@
+
 function ValidateEmbedUrl(embedUrl) {
     var embedUrl = $('#txtReportEmbed').val();
     
@@ -50,8 +51,11 @@ function LoadLogWindow(divSelector) {
 }
 
 function SetCode(func) {
-    $("#txtCode").val(BodyCodeOfFunction(func));
-    
+    var codeHtml = '<pre id="txtCode" class="brush: js" >'
+    codeHtml = codeHtml + BodyCodeOfFunction(func) + '</pre><script type="text/javascript" src="../node_modules/syntaxhighlighter/dist/syntaxhighlighter.js"></script>'
+
+    $("#highlighter").html(codeHtml);
+
     $('#btnRunCode').off('click');
     $('#btnRunCode').click(func);
 }
