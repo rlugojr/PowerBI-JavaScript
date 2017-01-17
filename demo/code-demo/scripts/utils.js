@@ -1,4 +1,3 @@
-
 function ValidateEmbedUrl(embedUrl) {
     var embedUrl = $('#txtReportEmbed').val();
     
